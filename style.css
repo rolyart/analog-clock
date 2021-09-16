@@ -1,0 +1,349 @@
+body {
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.clock-container {
+  width: 320px;
+  height: 320px;
+  border-width: 16px;
+  border-style: solid;
+  border-radius: 50%;
+  position: relative;
+  -webkit-box-shadow: inset -10px 10px 15px rgba(0, 0, 0, 0.4), inset 10px -10px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -10px 10px 15px rgba(0, 0, 0, 0.4), inset 10px -10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.clock-container::before {
+  width: 16px;
+  height: 16px;
+  content: '';
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.clock-container .no {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  padding: 10px;
+}
+
+.clock-container .no h3 {
+  margin: 0;
+  font-weight: lighter;
+}
+
+.clock-container .no::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 15px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 38px;
+}
+
+.clock-container .no-1 {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.clock-container .no-1 h3 {
+  -webkit-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+}
+
+.clock-container .no-2 {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.clock-container .no-2 h3 {
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+}
+
+.clock-container .no-3 {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.clock-container .no-3 h3 {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.clock-container .no-4 {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+
+.clock-container .no-4 h3 {
+  -webkit-transform: rotate(-120deg);
+          transform: rotate(-120deg);
+}
+
+.clock-container .no-5 {
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+
+.clock-container .no-5 h3 {
+  -webkit-transform: rotate(-150deg);
+          transform: rotate(-150deg);
+}
+
+.clock-container .no-6 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.clock-container .no-6 h3 {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+.clock-container .no-7 {
+  -webkit-transform: rotate(210deg);
+          transform: rotate(210deg);
+}
+
+.clock-container .no-7 h3 {
+  -webkit-transform: rotate(-210deg);
+          transform: rotate(-210deg);
+}
+
+.clock-container .no-8 {
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+
+.clock-container .no-8 h3 {
+  -webkit-transform: rotate(-240deg);
+          transform: rotate(-240deg);
+}
+
+.clock-container .no-9 {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.clock-container .no-9 h3 {
+  -webkit-transform: rotate(-270deg);
+          transform: rotate(-270deg);
+}
+
+.clock-container .no-10 {
+  -webkit-transform: rotate(300deg);
+          transform: rotate(300deg);
+}
+
+.clock-container .no-10 h3 {
+  -webkit-transform: rotate(-300deg);
+          transform: rotate(-300deg);
+}
+
+.clock-container .no-11 {
+  -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+}
+
+.clock-container .no-11 h3 {
+  -webkit-transform: rotate(-330deg);
+          transform: rotate(-330deg);
+}
+
+.clock-container .clock-hand {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.clock-container .clock-hand div {
+  left: 50%;
+  bottom: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+}
+
+.clock-container .clock-hand .second {
+  width: 1px;
+  height: 35%;
+}
+
+.clock-container .clock-hand .minute {
+  width: 4px;
+  height: 30%;
+  border-radius: 5px;
+}
+
+.clock-container .clock-hand .hour {
+  width: 8px;
+  height: 20%;
+  border-radius: 5px;
+}
+
+.switch-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 64px;
+  height: 36px;
+  border-radius: 36px;
+  border: none;
+  background-color: #555555;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  overflow: hidden;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+}
+
+.switch-button::after {
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  content: '';
+  background-color: white;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  left: 0;
+}
+
+.switch-button::before {
+  position: absolute;
+  content: 'Dark';
+  font-size: 10px;
+  line-height: 30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+  padding: 0 5px;
+  color: white;
+}
+
+.switch-button.on {
+  background-color: #F1F1F1;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.switch-button.on::after {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  -webkit-transform: translate(100%, -50%);
+          transform: translate(100%, -50%);
+  background-color: #555555;
+}
+
+.switch-button.on::before {
+  content: 'Light';
+  text-align: left;
+  color: black;
+}
+
+/* Theme 
+============================== */
+.dark {
+  background-color: black;
+}
+
+.dark .clock-container {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset -10px 10px 15px rgba(0, 0, 0, 0.4), inset 10px -10px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: inset -10px 10px 15px rgba(0, 0, 0, 0.4), inset 10px -10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.dark .clock-container::before {
+  background-color: white;
+}
+
+.dark .clock-container .no {
+  color: white;
+}
+
+.dark .clock-container .no:after {
+  background-color: white;
+}
+
+.dark .clock-container .clock-hand .hour {
+  background-color: black !important;
+}
+
+.dark .clock-container .clock-hand .minute {
+  background-color: #151515 !important;
+}
+
+.dark .clock-container .clock-hand .second {
+  background-color: white;
+}
+
+.light {
+  background-color: white;
+}
+
+.light .clock-container {
+  border-color: black;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.light .clock-container::before {
+  background-color: black;
+}
+
+.light .clock-container .no {
+  color: white;
+}
+
+.light .clock-container .no h3 {
+  color: black;
+}
+
+.light .clock-container .no:after {
+  background-color: black;
+}
+
+.light .clock-container .clock-hand .hour {
+  background-color: black !important;
+}
+
+.light .clock-container .clock-hand .minute {
+  background-color: #151515 !important;
+}
+
+.light .clock-container .clock-hand .second {
+  background-color: black;
+}
+/*# sourceMappingURL=style.css.map */
